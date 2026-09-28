@@ -1,0 +1,54 @@
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-bg text-text antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Visible keyboard focus everywhere, styled to match the palette instead
+   of the browser default blue ring. */
+:focus-visible {
+  outline: 2px solid #5b8cff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: #ff5a5a55;
+}
+
+/* Thin, quiet scrollbars that fit a dense data dashboard. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #242b38;
+  border-radius: 6px;
+  border: 2px solid #0a0d12;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2f3849;
+}
